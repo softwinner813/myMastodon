@@ -1,0 +1,2 @@
+# myMastodon
+Custom mastodon
