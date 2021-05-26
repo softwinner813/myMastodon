@@ -16,6 +16,8 @@ class Auth::SessionsController < Devise::SessionsController
   before_action :set_body_classes
 
   def new
+    
+
     Devise.omniauth_configs.each do |provider, config|
       return redirect_to(omniauth_authorize_path(resource_name, provider)) if config.strategy.redirect_at_sign_in
     end
@@ -24,6 +26,7 @@ class Auth::SessionsController < Devise::SessionsController
   end
 
   def create
+    
     super do |resource|
       resource.update_sign_in!(request, new_sign_in: true)
       remember_me(resource)
@@ -41,6 +44,7 @@ class Auth::SessionsController < Devise::SessionsController
 
   def webauthn_options
     user = find_user
+    
 
     if user.webauthn_enabled?
       options_for_get = WebAuthn::Credential.options_for_get(
@@ -58,6 +62,8 @@ class Auth::SessionsController < Devise::SessionsController
   protected
 
   def find_user
+    
+    
     if session[:attempt_user_id]
       User.find_by(id: session[:attempt_user_id])
     else
@@ -69,11 +75,14 @@ class Auth::SessionsController < Devise::SessionsController
   end
 
   def user_params
+    
+
     params.require(:user).permit(:email, :password, :otp_attempt, :sign_in_token_attempt, credential: {})
   end
 
   def after_sign_in_path_for(resource)
     last_url = stored_location_for(:user)
+    
 
     if home_paths(resource).include?(last_url)
       root_path
@@ -83,6 +92,8 @@ class Auth::SessionsController < Devise::SessionsController
   end
 
   def after_sign_out_path_for(_resource_or_scope)
+    
+
     Devise.omniauth_configs.each_value do |config|
       return root_path if config.strategy.redirect_at_sign_in
     end
@@ -91,6 +102,8 @@ class Auth::SessionsController < Devise::SessionsController
   end
 
   def require_no_authentication
+    
+
     super
 
     # Delete flash message that isn't entirely useful and may be confusing in
@@ -109,6 +122,8 @@ class Auth::SessionsController < Devise::SessionsController
   end
 
   def home_paths(resource)
+    
+
     paths = [about_path]
 
     if single_user_mode? && resource.is_a?(User)
@@ -119,10 +134,14 @@ class Auth::SessionsController < Devise::SessionsController
   end
 
   def continue_after?
+    
+
     truthy_param?(:continue)
   end
 
   def restart_session
+    
+
     clear_attempt_from_session
     redirect_to new_user_session_path, alert: I18n.t('devise.failure.timeout')
   end

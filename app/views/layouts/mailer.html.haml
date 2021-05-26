@@ -1,3 +1,64 @@
+-# !!!
+-# %html{ lang: I18n.locale }
+-#   %head
+-#     %meta{ 'http-equiv' => 'Content-Type', 'content' => 'text/html; charset=utf-8' }/
+-#     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0, shrink-to-fit=no' }
+
+-#     %title/
+
+-#     = stylesheet_pack_tag 'mailer'
+-#   %body{ dir: locale_direction }
+-#     %table.email-table{ cellspacing: 0, cellpadding: 0 }
+-#       %tbody
+-#         %tr
+-#           %td.email-body.email-start
+-#             .email-container
+-#               %table.content-section{ cellspacing: 0, cellpadding: 0 }
+-#                 %tbody
+-#                   %tr
+-#                     %td.content-cell.header
+-#                       .email-row
+-#                         .col-6
+-#                           %table.column{ cellspacing: 0, cellpadding: 0 }
+-#                             %tbody
+-#                               %tr
+-#                                 %td.column-cell
+-#                                   = link_to root_url do
+-#                                     = image_tag full_pack_url('media/images/mailer/logo_full.png'), alt: 'Mastodon', height: 100, class: 'logo'
+
+-#     = yield
+
+-#     %table.email-table{ cellspacing: 0, cellpadding: 0 }
+-#       %tbody
+-#         %tr
+-#           %td.email-body.email-end
+-#             .email-container
+-#               %table.content-section{ cellspacing: 0, cellpadding: 0 }
+-#                 %tbody
+-#                   %tr
+-#                     %td.content-cell.content-end
+-#                       != "&nbsp; "
+-#                   %tr
+-#                     %td.blank-cell.footer
+-#                       .email-row
+-#                         .col-6
+-#                           %table.column{ cellspacing: 0, cellpadding: 0 }
+-#                             %tbody
+-#                               %td.column-cell
+-#                                 %p= 'SiteLinez hosted on berlin-tst-srv-michaels.sitelinez.com'
+-#                                 -# %p= t 'about.hosted_on', domain: site_hostname
+-#                                 -# %p= link_to t('application_mailer.notification_preferences'), settings_preferences_notifications_url
+-#                               %td.column-cell.text-right
+-#                                 = link_to root_url do
+-#                                   = image_tag full_pack_url('media/images/mailer/logo_bottom.jpg'), alt: 'Mastodon', height: 24
+
+
+-# =================================================================
+-# @Auth: SoftWinner
+-# @Date: 2021.5.20
+-# @Desc: Custom Mailer Layout
+-# =================================================================
+
 !!!
 %html{ lang: I18n.locale }
   %head
@@ -24,7 +85,7 @@
                               %tr
                                 %td.column-cell
                                   = link_to root_url do
-                                    = image_tag full_pack_url('media/images/mailer/logo_full.png'), alt: 'Mastodon', height: 34, class: 'logo'
+                                    = image_tag full_pack_url('media/images/mailer/logo_full.png'), alt: 'Mastodon', height: 100, class: 'logo'
 
     = yield
 
@@ -45,8 +106,7 @@
                           %table.column{ cellspacing: 0, cellpadding: 0 }
                             %tbody
                               %td.column-cell
-                                %p= t 'about.hosted_on', domain: site_hostname
-                                %p= link_to t('application_mailer.notification_preferences'), settings_preferences_notifications_url
+                                %p= 'SiteLinez hosted on berlin-tst-srv-michaels.sitelinez.com'
                               %td.column-cell.text-right
                                 = link_to root_url do
-                                  = image_tag full_pack_url('media/images/mailer/logo_transparent.png'), alt: 'Mastodon', height: 24
+                                  = image_tag full_pack_url('media/images/mailer/logo_bottom.jpg'), alt: 'Mastodon', height: 24

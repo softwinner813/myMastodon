@@ -11,6 +11,7 @@ class Auth::SetupController < ApplicationController
   skip_before_action :require_functional!
 
   def show
+    
     flash.now[:notice] = begin
       if @user.pending?
         I18n.t('devise.registrations.signed_up_but_pending')
@@ -24,7 +25,7 @@ class Auth::SetupController < ApplicationController
     # This allows updating the e-mail without entering a password as is required
     # on the account settings page; however, we only allow this for accounts
     # that were not confirmed yet
-
+    
     if @user.update(user_params)
       redirect_to auth_setup_path, notice: I18n.t('devise.confirmations.send_instructions')
     else
@@ -37,6 +38,7 @@ class Auth::SetupController < ApplicationController
   private
 
   def require_unconfirmed_or_pending!
+        
     redirect_to root_path if current_user.confirmed? && current_user.approved?
   end
 

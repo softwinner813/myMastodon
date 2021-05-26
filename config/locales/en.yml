@@ -1429,7 +1429,7 @@ en:
     welcome:
       edit_profile_action: Setup profile
       edit_profile_step: You can customize your profile by uploading an avatar, header, changing your display name and more. If you’d like to review new followers before they’re allowed to follow you, you can lock your account.
-      explanation: Here are some tips to get you started
+      explanation: Login to hear what it is saying
       final_action: Start posting
       final_step: 'Start posting! Even without followers your public messages may be seen by others, for example on the local timeline and in hashtags. You may want to introduce yourself on the #introductions hashtag.'
       full_handle: Your full handle
@@ -1442,7 +1442,7 @@ en:
       tip_local_timeline: The local timeline is a firehose view of people on %{instance}. These are your immediate neighbours!
       tip_mobile_webapp: If your mobile browser offers you to add Mastodon to your homescreen, you can receive push notifications. It acts like a native app in many ways!
       tips: Tips
-      title: Welcome aboard, %{name}!
+      title: Your WMS wants to have a word with you, @%{name}
   users:
     follow_limit_reached: You cannot follow more than %{limit} people
     generic_access_help_html: Trouble accessing your account? You may get in touch with %{email} for assistance

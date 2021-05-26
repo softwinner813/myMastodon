@@ -17,16 +17,21 @@ class Auth::ConfirmationsController < Devise::ConfirmationsController
   private
 
   def require_unconfirmed!
+   
     if user_signed_in? && current_user.confirmed? && current_user.unconfirmed_email.blank?
       redirect_to(current_user.approved? ? root_path : edit_user_registration_path)
     end
   end
 
   def set_body_classes
+    
+
     @body_classes = 'lighter'
   end
 
   def after_resending_confirmation_instructions_path_for(_resource_name)
+    
+
     if user_signed_in?
       if current_user.confirmed? && current_user.approved?
         edit_user_registration_path
@@ -39,10 +44,26 @@ class Auth::ConfirmationsController < Devise::ConfirmationsController
   end
 
   def after_confirmation_path_for(_resource_name, user)
-    if user.created_by_application && truthy_param?(:redirect_to_app)
-      user.created_by_application.redirect_uri
-    else
-      super
+    
+    print ">>>>>>>>>>>>>>>>>>>>>>>  Redirect after Confirming Email >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+    print ENV['REDIRECT_URL']
+    # '/' + ENV['REDIRECT_URL']
+
+
+    ######################################################################################
+    # @Auth: SoftWinner
+    # @Date: 2021.5.26
+    # @Desc: Redirect to other url using ENV variable after confirming email 
+    ######################################################################################
+    
+    if ENV['REDIRECT_URL'] != '' # if exist user's redirect url
+      ENV['REDIRECT_URL']
+    else 
+      if user.created_by_application && truthy_param?(:redirect_to_app)
+        user.created_by_application.redirect_uri
+      else
+        super
+      end
     end
   end
 end

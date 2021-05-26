@@ -18,9 +18,9 @@ en:
       unconfirmed: You have to confirm your email address before continuing.
     mailer:
       confirmation_instructions:
-        action: Verify email address
+        action: Confirm and return to Web
         action_with_app: Confirm and return to %{app}
-        explanation: You have created an account on %{host} with this email address. You are one click away from activating it. If this wasn't you, please ignore this email.
+        explanation: An account has been created for you by an Administrator of SiteLinez. You are one click away from activating it. If You believe this is an error, ignore this email.
         explanation_when_pending: You applied for an invite to %{host} with this email address. Once you confirm your e-mail address, we will review your application. You can login to change your details or delete your account, but you cannot access most of the functions until your account is approved. If your application is rejected, your data will be removed, so no further action will be required from you. If this wasn't you, please ignore this email.
         extra_html: Please also check out <a href="%{terms_path}">the rules of the server</a> and <a href="%{policy_path}">our terms of service</a>.
         subject: 'Mastodon: Confirmation instructions for %{instance}'

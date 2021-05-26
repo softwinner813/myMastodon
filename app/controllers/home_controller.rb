@@ -9,6 +9,18 @@ class HomeController < ApplicationController
     @body_classes = 'app-body'
   end
 
+
+  ######################################################################################
+  # @Auth: SoftWinner
+  # @Date: 2021.5.23
+  # @Desc: Controller Fuction for Redirecting to URL of out of mastodon's domain, for example : http:\\outdomain.com
+  ######################################################################################
+  def foobar
+    print ">>>>>>>> Redirect URL to out of mastodon's domain >>>>>>>>>>>"
+    
+  end
+
+
   private
 
   def redirect_unauthenticated_to_permalinks!
