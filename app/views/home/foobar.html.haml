@@ -1,6 +1,10 @@
+-#######################################################################################
+-# @Auth: SoftWinner
+-# @Date: 2021.5.27
+-# @Desc: Controller Fuction for Full Redirecting to URL of out of mastodon's domain, for example : http:\\outdomain.com
+-#######################################################################################
 
-<h1>This is test Page!!!!</h1>
-<script type="text/javascript">
-console.log("S>>>>>>>>>>>>>>>>>>>>>> Start>>>>>>>>>>>>")
-location.assign("https://www.w3schools.com");
-</script>
+:javascript
+    console.log('>>>>>>>>>>>>>>>> Redirect URL>>>>>>>>>>>>')
+    var redirect_url = "#{j@redirect_url}"
+    console.log(redirect_url)
