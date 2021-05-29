@@ -90,7 +90,9 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   # E-mails
-  outgoing_email_address = ENV.fetch('SMTP_FROM_ADDRESS', 'notifications@localhost')
+  # outgoing_email_address = ENV.fetch('SMTP_FROM_ADDRESS', 'notifications@localhost')
+  outgoing_email_address = ENV.fetch('SMTP_FROM_ADDRESS', 'sitelinez@test.com')
+  
   outgoing_mail_domain   = Mail::Address.new(outgoing_email_address).domain
   config.action_mailer.default_options = {
     from: outgoing_email_address,

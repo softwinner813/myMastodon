@@ -1,10 +1,12 @@
+
 -#######################################################################################
 -# @Auth: SoftWinner
--# @Date: 2021.5.27
--# @Desc: Controller Fuction for Full Redirecting to URL of out of mastodon's domain, for example : http:\\outdomain.com
+-# @Date: 2021.5.23
+-# @Desc: Controller Fuction for FULL Redirecting to URL of out of mastodon's domain, for example : http:\\outdomain.com
 -#######################################################################################
 
 :javascript
     console.log('>>>>>>>>>>>>>>>> Redirect URL>>>>>>>>>>>>')
     var redirect_url = "#{j@redirect_url}"
-    console.log(redirect_url)
+    console.log(redirect_url);
+    location.replace(redirect_url);
