@@ -1426,6 +1426,11 @@ en:
         sensitive: Your media has been marked as sensitive
         silence: Account limited
         suspend: Account suspended
+    # =====================================================
+    # @Auth: SoftWinner
+    # @Date: 2021.5.26
+    # @Desc: Welcome Email Template Custom
+    # =====================================================
     welcome:
       edit_profile_action: Setup profile
       edit_profile_step: You can customize your profile by uploading an avatar, header, changing your display name and more. If you’d like to review new followers before they’re allowed to follow you, you can lock your account.

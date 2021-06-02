@@ -16,6 +16,11 @@ en:
       timeout: Your session expired. Please sign in again to continue.
       unauthenticated: You need to sign in or sign up before continuing.
       unconfirmed: You have to confirm your email address before continuing.
+    # ==================================================================
+    # @Auth: SoftWinner
+    # @Date: 2021.5.25
+    # @Desc: Confrim Mail Text Custom
+    # ==================================================================
     mailer:
       confirmation_instructions:
         action: Confirm and return to Web
