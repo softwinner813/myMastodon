@@ -183,6 +183,16 @@ p {
   }
 }
 
+
+/************************************
+* @Auth: SoftWinner
+* @Date: 2021.6.2
+* @Desc: Email Middle Text Color
+*/
+.email-middle-desc {
+  color: black!important;
+}
+
 .email-body .column-cell,
 .column-cell,
 p {
@@ -214,7 +224,15 @@ h3,
 h4,
 h5,
 h6 {
-  color: $ui-secondary-color;
+
+  /************************************
+   * @Auth: SoftWinner
+   * @Date: 2021.6.2
+   * @Desc: Email Title Color
+   */
+   
+  // color: $ui-secondary-color;
+  color: black;
   margin-left: 0;
   margin-right: 0;
   margin-top: 20px;
@@ -276,15 +294,23 @@ h5 {
 }
 
 .content-cell {
-  background-color: darken($ui-base-color, 4%);
-
+  // background-color: darken($ui-base-color, 4%);
+  background-color: rgb(32, 85, 121);
+  
   &.darker {
     background-color: darken($ui-base-color, 8%);
   }
 }
 
 .hero {
-  background-color: $ui-base-color;
+  // background-color: $ui-base-color;
+  /************************************
+   * @Auth: SoftWinner
+   * @Date: 2021.6.2
+   * @Desc: Email Middle Color
+   */
+  background-color: white;
+
   padding-top: 20px;
 }
 
@@ -302,7 +328,14 @@ h5 {
 
 .header {
   border-radius: 5px 5px 0 0;
-  background-color: darken($ui-base-color, 8%);
+  // background-color: darken($ui-base-color, 8%);
+  
+  /************************************
+   * @Auth: SoftWinner
+   * @Date: 2021.6.2
+   * @Desc: Email Header Color
+   */
+  background-color: rgb(32, 85, 121);
 
   .column-cell {
     text-align: center;
@@ -323,7 +356,15 @@ h5 {
 .footer {
   .column-cell,
   p {
-    color: lighten($ui-base-color, 34%);
+    // color: lighten($ui-base-color, 34%);
+
+  /************************************
+   * @Auth: SoftWinner
+   * @Date: 2021.6.2
+   * @Desc: Email Footer Text Color(SiteLinez hosted on berlin-tst-srv.....)
+   */
+   color: lighten($ui-base-color, 34%);
+
   }
 
   p {
@@ -395,11 +436,19 @@ h5 {
 }
 
 .button-default {
+  
   background-color: darken($ui-base-color, 8%);
+   
 }
 
 .button-primary {
-  background-color: darken($ui-highlight-color, 3%);
+   /************************************
+   * @Auth: SoftWinner
+   * @Date: 2021.6.2
+   * @Desc: Email Confirm Button Color
+   */
+  // background-color: darken($ui-highlight-color, 3%);
+  background-color: rgb(18, 49, 70);
 }
 
 .text-center {

@@ -31,22 +31,28 @@
 
                               %h1= t 'devise.mailer.confirmation_instructions.title'
 
-%table.email-table{ cellspacing: 0, cellpadding: 0 }
-  %tbody
-    %tr
-      %td.email-body
-        .email-container
-          %table.content-section{ cellspacing: 0, cellpadding: 0 }
-            %tbody
-              %tr
-                %td.content-cell.content-start
-                  .email-row
-                    .col-6
-                      %table.column{ cellspacing: 0, cellpadding: 0 }
-                        %tbody
-                          %tr
-                            %td.column-cell.text-center
-                              %p= t @resource.approved? ? 'devise.mailer.confirmation_instructions.explanation' : 'devise.mailer.confirmation_instructions.explanation_when_pending', host: site_hostname
+-# %table.email-table{ cellspacing: 0, cellpadding: 0 }
+-#   %tbody
+-#     %tr
+-#       %td.email-body
+-#         .email-container
+-#           %table.content-section{ cellspacing: 0, cellpadding: 0 }
+-#             %tbody
+-#               %tr
+-#                 %td.content-cell.hero
+-#                   .email-row
+-#                     .col-6
+-#                       %table.column{ cellspacing: 0, cellpadding: 0 }
+-#                         %tbody
+-#                           %tr
+-#                             %td.column-cell.text-center.padded
+-#                               %table.hero-icon{ align: 'center', cellspacing: 0, cellpadding: 0 }
+-#                                 %tbody
+-#                                   %tr
+-#                                     %td
+-#                                       = image_tag full_pack_url('media/images/mailer/icon_email.png'), alt: ''
+
+-#                               %h1= t 'devise.mailer.confirmation_instructions.title'
 
 %table.email-table{ cellspacing: 0, cellpadding: 0 }
   %tbody
@@ -56,7 +62,24 @@
           %table.content-section{ cellspacing: 0, cellpadding: 0 }
             %tbody
               %tr
-                %td.content-cell
+                %td.content-cell.hero
+                  .email-row
+                    .col-6
+                      %table.column{ cellspacing: 0, cellpadding: 0 }
+                        %tbody
+                          %tr
+                            %td.column-cell.text-center
+                              %p.email-middle-desc= t @resource.approved? ? 'devise.mailer.confirmation_instructions.explanation' : 'devise.mailer.confirmation_instructions.explanation_when_pending', host: site_hostname
+
+%table.email-table{ cellspacing: 0, cellpadding: 0 }
+  %tbody
+    %tr
+      %td.email-body
+        .email-container
+          %table.content-section{ cellspacing: 0, cellpadding: 0 }
+            %tbody
+              %tr
+                %td.content-cell.hero
                   %table.column{ cellspacing: 0, cellpadding: 0 }
                     %tbody
                       %tr
