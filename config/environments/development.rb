@@ -69,8 +69,8 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  # config.action_mailer.default_options = { from: 'notifications@localhost' }
-  config.action_mailer.default_options = { from: 'sitelinez@test.com' }
+  config.action_mailer.default_options = { from: 'notifications@localhost' }
+  # config.action_mailer.default_options = { from: 'sitelinez@test.com' }
 
   # If using a Heroku, Vagrant or generic remote development environment,
   # use letter_opener_web, accessible at  /letter_opener.

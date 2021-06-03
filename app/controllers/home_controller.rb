@@ -15,8 +15,7 @@ class HomeController < ApplicationController
   # @Date: 2021.5.23
   # @Desc: Controller Fuction for FULL Redirecting to URL of out of mastodon's domain, for example : http:\\outdomain.com
   ######################################################################################
-  def foobar
-    print ">>>>>>>> Redirect URL to out of mastodon's domain >>>>>>>>>>>"
+  def emailVerificationRedirect
 
     @redirect_url = (ENV['FULL_REDIRECT_URL'] && ENV['FULL_REDIRECT_URL'] != '' ) ? ENV['FULL_REDIRECT_URL'] : 'http://sitelinez.com'
   end

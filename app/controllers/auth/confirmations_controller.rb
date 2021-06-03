@@ -44,11 +44,6 @@ class Auth::ConfirmationsController < Devise::ConfirmationsController
   end
 
   def after_confirmation_path_for(_resource_name, user)
-    
-    print ">>>>>>>>>>>>>>>>>>>>>>>  Redirect after Confirming Email >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-    print ENV['REDIRECT_URL']
-    # '/' + ENV['REDIRECT_URL']
-
 
     ######################################################################################
     # @Auth: SoftWinner
@@ -58,7 +53,7 @@ class Auth::ConfirmationsController < Devise::ConfirmationsController
     
     # If full redirect to out of mastodon's domain?
     if ENV['IS_FULL_REDIRECT'] && ENV['IS_FULL_REDIRECT'] == 'true' 
-      '/foobar/test'
+      '/emailVerificationRedirect/start'
     else
       if ENV['REDIRECT_URL'] && ENV['REDIRECT_URL'] != '' # if exist user's redirect url
         ENV['REDIRECT_URL']

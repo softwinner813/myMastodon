@@ -12,13 +12,13 @@ RSpec.describe AdminMailer, type: :mailer do
     it 'renders the headers' do
       expect(mail.subject).to eq("New report for cb6e6126.ngrok.io (##{report.id})")
       expect(mail.to).to eq [recipient.user_email]
-      # expect(mail.from).to eq ['notifications@localhost']
+      expect(mail.from).to eq ['notifications@localhost']
 
       # ================================
       # @Auth: SoftWinner
       # @Date: 2021.5.28
       # @Desc: Custom Email Title Header
-      expect(mail.from).to eq ['sitelinez@test.com']
+      # expect(mail.from).to eq ['sitelinez@test.com']
     end
 
     it 'renders the body' do
